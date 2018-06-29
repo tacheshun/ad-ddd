@@ -11,28 +11,28 @@ use MG\Domain\Model\User\UserId;
 class DoctrineAdRepository extends EntityRepository implements AdRepository
 {
 
-    public function ofId(Adid $userId): Ad
+    public function ofId(Adid $adid): ?Ad
     {
-        // TODO: Implement ofId() method.
+        return $this->find($adid);
     }
 
-    public function ofUserId(UserId $userId): Ad
+    public function ofUserId(UserId $userId): ?Ad
     {
-        // TODO: Implement ofUserId() method.
+        return $this->findBy(['userId'=>$userId]);
     }
 
-    public function add(Ad $user)
+    public function add(Ad $ad)
     {
-        // TODO: Implement add() method.
+        $this->getEntityManager()->persist($ad);
     }
 
-    public function remove(Ad $wish)
+    public function remove(Ad $ad)
     {
-        // TODO: Implement remove() method.
+        $this->getEntityManager()->remove($ad);
     }
 
     public function nextIdentity(): Adid
     {
-        // TODO: Implement nextIdentity() method.
+        return new Adid();
     }
 }

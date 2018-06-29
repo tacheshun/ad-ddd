@@ -5,6 +5,7 @@ namespace MG\Domain\Model\User;
 use Assert\Assertion;
 use Doctrine\Common\Collections\ArrayCollection;
 use MG\Domain\Model\Ad\Ad;
+use MG\Domain\Model\Ad\Adid;
 
 class User
 {
@@ -51,7 +52,7 @@ class User
         $this->password = $password;
     }
 
-    public function id(): string
+    public function id(): UserId
     {
         return $this->userId;
     }
@@ -65,5 +66,15 @@ class User
     public function password() : string
     {
         return $this->password;
+    }
+
+    public function makeAd($nextIdentity, $address, $content): Ad
+    {
+        return new Ad(
+            new Adid(),
+            $this->id(),
+            $address,
+            $content
+        );
     }
 }

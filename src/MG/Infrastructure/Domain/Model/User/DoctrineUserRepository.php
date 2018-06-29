@@ -9,24 +9,23 @@ use MG\Domain\Model\User\UserRepository;
 
 class DoctrineUserRepository extends EntityRepository implements UserRepository
 {
-
-    public function ofId(UserId $userId): User
+    public function ofId(UserId $userId): ?User
     {
-        // TODO: Implement ofId() method.
+        return $this->find($userId);
     }
 
-    public function ofEmail($email): User
+    public function ofEmail($email): ?User
     {
-        // TODO: Implement ofEmail() method.
+        return $this->findOneBy(['email' => $email]);
     }
 
     public function add(User $user)
     {
-        // TODO: Implement add() method.
+        $this->getEntityManager()->persist($user);
     }
 
     public function nextIdentity(): UserId
     {
-        // TODO: Implement nextIdentity() method.
+        return new UserId();
     }
 }

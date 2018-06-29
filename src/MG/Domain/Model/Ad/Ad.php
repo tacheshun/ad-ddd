@@ -21,9 +21,9 @@ class Ad
     protected $updatedOn;
 
 
-    public function __construct(Adid $wishId, UserId $userId, $telephone, $content)
+    public function __construct(Adid $adId, UserId $userId, $telephone, $content)
     {
-        $this->adId = $wishId;
+        $this->adId = $adId;
         $this->userId = $userId;
 
         $this->setContent($content);
@@ -65,27 +65,27 @@ class Ad
         return $this->userId;
     }
 
-    public function telephone(): string
-    {
-        return $this->telephone;
-    }
-
-    public function changeContent($content)
+    public function changeContent($content): self
     {
         $this->setContent($content);
 
         return $this;
     }
 
-    public function changePhoto($photo)
+    public function changePhoto($photo): self
     {
         $this->setTelephone($photo);
 
         return $this;
     }
 
-    public function content()
+    public function content(): string
     {
         return $this->content;
+    }
+
+    public function telephone(): string
+    {
+        return $this->telephone;
     }
 }
