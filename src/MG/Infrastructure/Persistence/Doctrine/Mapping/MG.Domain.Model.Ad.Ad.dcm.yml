@@ -7,10 +7,16 @@ MG\Domain\Model\Ad\Ad:
       column: id
       type: AdId
   fields:
-    address:
+    telephone:
       type: string
     content:
       type: text
     userId:
       type: UserId
       column: user_id
+    createdOn:
+      column: created_on
+      type: datetime
+    updatedOn:
+      column: updated_on
+      type: datetime

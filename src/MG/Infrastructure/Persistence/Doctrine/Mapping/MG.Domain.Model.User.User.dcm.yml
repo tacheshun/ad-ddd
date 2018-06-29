@@ -22,6 +22,6 @@ MG\Domain\Model\User\User:
           user_id:
             referencedColumnName: id
         inverseJoinColumns:
-          wish_id:
+          ad_id:
             referencedColumnName: id
             unique: true
