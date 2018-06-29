@@ -66,47 +66,4 @@ class User
     {
         return $this->password;
     }
-
-    public function makeWishNoAggregateVersion(Adid $adId, $address, $content)
-    {
-        return new Ad(
-            $wishId,
-            $this->id(),
-            $address,
-            $content
-        );
-    }
-
-
-    public function grantWishes()
-    {
-        $wishesGranted = 0;
-        foreach ($this->wishes as $wish) {
-            $wish->grant();
-            ++$wishesGranted;
-        }
-
-        return $wishesGranted;
-    }
-
-    public function updateWish(WishId $wishId, $address, $content)
-    {
-        foreach ($this->wishes as $k => $wish) {
-            if ($wish->id()->equals($wishId)) {
-                $wish->changeContent($content);
-                $wish->changeAddress($address);
-                break;
-            }
-        }
-    }
-
-    public function deleteWish(WishId $wishId)
-    {
-        foreach ($this->wishes as $k => $wish) {
-            if ($wish->id()->equals($wishId)) {
-                unset($this->wishes[$k]);
-                break;
-            }
-        }
-    }
 }
