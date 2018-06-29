@@ -1,0 +1,16 @@
+MG\Domain\Model\Ad\Ad:
+  type: entity
+  table: mg_ad
+  repositoryClass: MG\Infrastructure\Domain\Model\Ad\DoctrineAdRepository
+  id:
+    adId:
+      column: id
+      type: AdId
+  fields:
+    address:
+      type: string
+    content:
+      type: text
+    userId:
+      type: UserId
+      column: user_id
