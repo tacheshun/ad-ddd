@@ -6,9 +6,14 @@ use MG\Domain\Model\User\UserId;
 
 interface AdRepository
 {
-    public function ofId(Adid $userId): ?Ad;
+    public function ofId(Adid $adid): ?Ad;
 
-    public function ofUserId(UserId $userId): ?Ad;
+    /**
+     * @param UserId $userId
+     *
+     * @return Ad[]|null
+     */
+    public function ofUserId(UserId $userId);
 
     public function add(Ad $ad);
 

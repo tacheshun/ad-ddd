@@ -3,17 +3,19 @@
 namespace MG\Infrastructure\Domain\Model\User;
 
 
+use MG\Domain\Model\User\User;
+use MG\Domain\Model\User\UserId;
 use MG\Infrastructure\Domain\Model\DoctrineEntityId;
 
 class DoctrineUserId extends DoctrineEntityId
 {
-    public function getName()
+    public function getName(): string
     {
-        return 'UserId';
+        return UserId::class;
     }
 
-    protected function getNamespace()
+    protected function getNamespace(): string
     {
-        return 'MG\Domain\Model\User';
+        return User::class;
     }
 }

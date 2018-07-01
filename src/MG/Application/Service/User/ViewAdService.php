@@ -14,7 +14,7 @@ class ViewAdService
         $this->adRepository = $adRepository;
     }
 
-    public function execute($request = null)
+    public function execute(?ViewAdRequest $request): ?array
     {
         return $this->adRepository->ofUserId(new UserId($request->userId()));
     }

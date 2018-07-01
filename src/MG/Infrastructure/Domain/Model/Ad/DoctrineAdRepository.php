@@ -16,7 +16,7 @@ class DoctrineAdRepository extends EntityRepository implements AdRepository
         return $this->find($adid);
     }
 
-    public function ofUserId(UserId $userId): ?Ad
+    public function ofUserId(UserId $userId): ?array
     {
         return $this->findBy(['userId'=>$userId]);
     }
