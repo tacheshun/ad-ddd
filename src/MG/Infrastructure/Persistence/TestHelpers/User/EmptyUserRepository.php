@@ -12,12 +12,12 @@ class EmptyUserRepository implements UserRepository
 
     public function ofId(UserId $userId): ?User
     {
-        return;
+        return null;
     }
 
     public function ofEmail($email): ?User
     {
-        return;
+        return null;
     }
 
     public function add(User $user)

@@ -15,7 +15,7 @@ class InMemoryAdRepository implements AdRepository
     public function ofId(Adid $adid): ?Ad
     {
         if (!isset($this->ads[$adid->id()])) {
-            return;
+            return null;
         }
 
         return $this->ads[$adid->id()];

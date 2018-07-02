@@ -16,3 +16,5 @@
 /vendor/
 /web/bundles/
 .idea
+bower_components
+node_modules

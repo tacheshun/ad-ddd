@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Olx</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/../bower_components/flat-ui/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/../bower_components/flat-ui/css/flat-ui.css">
+    <link rel="stylesheet" href="/../assets/app.css">
+
+    <style>
+        body { padding-top: 70px; }
+        footer { margin-top: 40px; }
+        .wish-image { width: 80px; height: 80px; }
+        .wish-row { margin-bottom: 20px; }
+        .wish-control { display:inline; width: 300px; }
+        input.ng-invalid {
+            color: #e74c3c;
+            border-color: #e74c3c;
+            box-shadow: none;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="lw">
+    <div class="container">
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="{{ path('home') }}">OlxClone</a>
+            </div>
+            {#<div class="collapse navbar-collapse" id="navbar-collapse-01">#}
+                {#{% if app.session.has('user') %}#}
+                    {#<p class="navbar-text navbar-right">#}
+                        {#<a href="{{ path('signout') }}">Bye!</a>#}
+                    {#</p>#}
+                    {#<p class="navbar-text navbar-right">#}
+                        {#<a href="{{ path('dashboard') }}">Dashboard</a>#}
+                    {#</p>#}
+                {#{% else %}#}
+                    {#<p class="navbar-text navbar-right">#}
+                        {#<a href="{{ path('signin') }}">Sign in</a>#}
+                    {#</p>#}
+                    {#<p class="navbar-text navbar-right">#}
+                        {#<a href="{{ path('signup') }}">Sign up</a>#}
+                    {#</p>#}
+                {#{% endif %}#}
+            {#</div><!-- /.navbar-collapse -->#}
+        </nav><!-- /navbar -->
+
+        {% if messages is defined %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.type | default('success') }}" role="alert">
+                    {{ message.info }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>OlxClone</h1>
+                <p class="lead">
+                    Publish an ad. We'll make it visible to milions of users looking for a home.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>How it Works</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <div class="tile">
+                    <img src="/../bower_components/flat-ui/images/icons/svg/map.svg" alt="Sign up" class="tile-image big-illustration">
+                    <h3 class="tile-title">1. Sign Up</h3>
+                    <p>So you would start to publishing ads? List your property with us and sleep well at night. </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="tile">
+                    <img src="/../bower_components/flat-ui/images/icons/svg/clipboard.svg" alt="Publish an ad" class="tile-image big-illustration">
+                    <h3 class="tile-title">2. Publish an ad</h3>
+                    <p>Add a personalised message and wait for your next tenants or buyers.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="tile">
+                    <img src="/../bower_components/flat-ui/images/icons/svg/mail.svg" alt="Respond to enquiries" class="tile-image big-illustration">
+                    <h3 class="tile-title">3. Keep in touch</h3>
+                    <p>Answer your emails, telephone or use our App to keep in touch and respond to users enquiries.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="tile">
+                    <img src="/../bower_components/flat-ui/images/icons/svg/retina.svg" alt="Rate your tenants" class="tile-image big-illustration">
+                    <h3 class="tile-title">4. Rate your tenants!</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium sodales ligula folder}</p>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
+    </div>
+
+    <footer>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/../bower_components/flat-ui/js/jquery-1.10.2.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/../bower_components/flat-ui/js/bootstrap.min.js"></script>
+</body>
+</html>

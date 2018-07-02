@@ -1,0 +1,27 @@
+{
+  "name": "olx-clone",
+  "version": "1.0.0",
+  "description": "Olx clone to learn DDD",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tacheshun/ad-ddd.git"
+  },
+  "author": "Marius Godeanu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tacheshun/ad-ddd/issues"
+  },
+  "homepage": "https://github.com/tacheshun/ad-ddds#readme"
+}

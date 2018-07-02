@@ -27,6 +27,6 @@ class NotAvailableRepository implements UserRepository
 
     public function nextIdentity(): UserId
     {
-        throw new UserRepositoryNotAvailableException();
+        return new UserId();
     }
 }

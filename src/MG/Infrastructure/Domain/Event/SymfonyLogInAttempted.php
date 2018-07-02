@@ -1,10 +1,15 @@
 <?php
 
-namespace MG\Domain\Event;
+namespace MG\Infrastructure\Domain\Event;
 
 
-class LogInAttempted
+use MG\Domain\Event\LoginAttempted;
+use Symfony\Component\EventDispatcher\Event;
+
+class SymfonyLogInAttempted extends Event implements LoginAttempted
 {
+    const NAME = 'login.attempted';
+
     private $email;
     private $occurredOn;
 

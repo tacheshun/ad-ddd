@@ -23,6 +23,7 @@ class RedisUserRepository implements UserRepository
         if ($content && $user = unserialize($content)) {
             return $user;
         }
+
         return null;
     }
 

@@ -1,0 +1,22 @@
+{
+  "name": "olx-clone",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tacheshun/ad-ddd",
+  "authors": [
+    "Marius Godeanu <godeanu.marius@emag.ro>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "flat-ui": "~2.1.3",
+    "angular": "~1.3.0",
+    "ngprogress": "~1.0.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

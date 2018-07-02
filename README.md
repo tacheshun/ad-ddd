@@ -7,6 +7,7 @@ It follows best practices and SOLID principles.
 ## Mandatory requirements
 
 * PHP 7.2
+* npm
 
 ## Set up the project
     curl -sS https://getcomposer.org/installer | php
@@ -15,3 +16,7 @@ It follows best practices and SOLID principles.
 ## Create the database schema
     php bin/console doctrine orm:schema-tool:create
     php bin/console doctrine orm:schema-tool:update --force
+    
+## Install assets and js stuff
+    sudo npm -g install
+    bower installs
