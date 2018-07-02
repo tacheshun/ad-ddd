@@ -65,13 +65,22 @@ class User
         return $this->email;
     }
 
-
     public function password() : string
     {
         return $this->password;
     }
 
-    public function makeAd($nextIdentity, $address, $content): Ad
+    public function createdOn() : \DateTime
+    {
+        return $this->createdOn;
+    }
+
+    public function updatedOn() : \DateTime
+    {
+        return $this->updatedOn;
+    }
+
+    public function makeNewAd($address, $content): Ad
     {
         return new Ad(
             new Adid(),

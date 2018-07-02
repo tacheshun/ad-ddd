@@ -27,7 +27,7 @@ class CreateAdService
 
         $user = $this->findUserOrFail($userId);
 
-        $ad = $user->makeAd(
+        $ad = $user->makeNewAd(
             $this->adRepository->nextIdentity(),
             $telephone,
             $content
