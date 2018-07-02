@@ -13,10 +13,8 @@ class DoctrineEntityId extends GuidType
 
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        $className = $this->getName();
-        $namespace = $this->getNameSpace();
-        $fqdn = $namespace.'\\'.$className;
+        $className = $this->getNamespace().'\\'.$this->getName();
 
-        return new $fqdn($value);
+        return new $className($value);
     }
 }

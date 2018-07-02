@@ -8,7 +8,6 @@ use MG\Domain\Model\User\UserId;
 class UserSecurityToken
 {
     private $userId;
-
     private $email;
 
     private function __construct(UserId $userId, $email)
@@ -22,12 +21,10 @@ class UserSecurityToken
         return new self($user->id(), $user->email());
     }
 
-
     public function id(): UserId
     {
         return $this->userId;
     }
-
 
     public function email(): string
     {

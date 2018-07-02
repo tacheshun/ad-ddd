@@ -6,8 +6,8 @@ use MG\Infrastructure\Domain\Model\DoctrineEntityId;
 
 class DoctrineAdid extends DoctrineEntityId
 {
-    private const ADID               = 'Adid';
-    private const MG_DOMAIN_MODEL_AD = 'MG\Domain\Model\Ad';
+    private const ADID                  = 'Adid';
+    private const DOMAIN_MODEL_AD_CLASS = 'MG\Domain\Model\Ad';
 
     public function getName(): string
     {
@@ -16,6 +16,6 @@ class DoctrineAdid extends DoctrineEntityId
 
     public function getNamespace(): string
     {
-        return self::MG_DOMAIN_MODEL_AD;
+        return self::DOMAIN_MODEL_AD_CLASS;
     }
 }

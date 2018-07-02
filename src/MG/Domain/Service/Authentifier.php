@@ -2,7 +2,6 @@
 
 namespace MG\Domain\Service;
 
-
 use MG\Domain\Model\User\User;
 use MG\Domain\Model\User\UserRepository;
 
