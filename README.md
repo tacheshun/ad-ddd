@@ -13,10 +13,12 @@ It follows best practices and SOLID principles.
     curl -sS https://getcomposer.org/installer | php
     php composer.phar install
 
-## Create the database schema
-    php bin/console doctrine orm:schema-tool:create
-    php bin/console doctrine orm:schema-tool:update --force
+## Create the database and schema
+    php bin/console doctrine:database:create
+    php bin/console doctrine:schema:create
+## Run the queries
+    php bin/console doctrine:schema:update --force
     
 ## Install assets and js stuff
-    sudo npm -g install
-    bower installs
+    sudo npm install -g
+    bower install
