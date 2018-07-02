@@ -13,7 +13,7 @@ class UserId
         $this->id = $id ?: Uuid::uuid4()->toString();
     }
 
-    public function userId(): string
+    public function id(): string
     {
         return $this->id;
     }
@@ -25,6 +25,6 @@ class UserId
 
     public function __toString()
     {
-        return $this->userId();
+        return $this->id();
     }
 }

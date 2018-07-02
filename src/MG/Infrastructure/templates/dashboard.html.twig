@@ -2,36 +2,36 @@
 
 {% block content %}
 
-    <p class="lead">If something would happen to me...</p>
-
-    {% for ad in ads %}
-        {% include 'ad-item.html.twig' with {ad: ad, showOptions: true} %}
-    {% else %}
-        <div class="row">
-            <div class="col-xs-12">
-                ...do nothing, a bit sad.
+    <p class="lead">My published ads</p>
+    {% if ads is defined %}
+        {% for ad in ads %}
+            {% include '@infra/ad-item.html.twig' with {ad: ad, showOptions: true} %}
+        {% else %}
+            <div class="row">
+                <div class="col-xs-12">
+                    ...no ads.
+                </div>
             </div>
-        </div>
-    {% endfor %}
-
+        {% endfor %}
+    {% endif %}
     <br/>
-    <p class="lead">You have {{ ads|length }} ads.</p>
+    {#<p class="lead">You have {{ ads|length }} ads.</p>#}
 
     <div class="row">
         <div class="col-xs-12">
-            {% include "@infra/ad-form.html.twig" with {route: path('add-wish')} %}
+            {#{% include "@infra/ad-form.html.twig" with {route: path('add-wish')} %}#}
         </div>
     </div>
 
     <br/>
-    <p class="lead">Badges...</p>
-    {% for badge in badges %}
-        {% include 'badge-item.html.twig' with {badge: badge} %}
-    {% else %}
-        <div class="row">
-            <div class="col-xs-12">
-                No badges, for now.
-            </div>
-        </div>
-    {% endfor %}
+    <p class="lead">My hard working earned badges...</p>
+    {#{% for badge in badges %}#}
+        {#{% include 'badge-item.html.twig' with {badge: badge} %}#}
+    {#{% else %}#}
+        {#<div class="row">#}
+            {#<div class="col-xs-12">#}
+                {#No badges, for now.#}
+            {#</div>#}
+        {#</div>#}
+    {#{% endfor %}#}
 {% endblock %}

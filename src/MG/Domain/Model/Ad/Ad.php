@@ -8,7 +8,7 @@ use MG\Domain\Model\User\UserId;
 
 class Ad
 {
-    protected $adId;
+    protected $adid;
 
     protected $userId;
 
@@ -21,9 +21,9 @@ class Ad
     protected $updatedOn;
 
 
-    public function __construct(Adid $adId, UserId $userId, $telephone, $content)
+    public function __construct(Adid $adid, UserId $userId, $telephone, $content)
     {
-        $this->adId = $adId;
+        $this->adid   = $adid;
         $this->userId = $userId;
 
         $this->setContent($content);
@@ -57,7 +57,7 @@ class Ad
 
     public function id(): Adid
     {
-        return $this->adId;
+        return $this->adid;
     }
 
     public function userId(): UserId

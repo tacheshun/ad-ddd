@@ -18,6 +18,9 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 }
 
 require __DIR__.'/../vendor/autoload.php';
+\Doctrine\DBAL\Types\Type::addType('UserId', 'MG\Infrastructure\Domain\Model\User\DoctrineUserId');
+\Doctrine\DBAL\Types\Type::addType('Adid', 'MG\Infrastructure\Domain\Model\Ad\DoctrineAdid');
+
 Debug::enable();
 
 $kernel = new AppKernel('dev', true);

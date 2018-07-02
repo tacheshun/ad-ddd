@@ -3,9 +3,9 @@ MG\Domain\Model\Ad\Ad:
   table: mg_ad
   repositoryClass: MG\Infrastructure\Domain\Model\Ad\DoctrineAdRepository
   id:
-    adId:
+    adid:
       column: id
-      type: AdId
+      type: Adid
   fields:
     telephone:
       type: string

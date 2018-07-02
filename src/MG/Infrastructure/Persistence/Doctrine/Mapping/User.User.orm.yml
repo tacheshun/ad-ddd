@@ -1,11 +1,11 @@
 MG\Domain\Model\User\User:
   type: entity
+  table: mg_user
+  repositoryClass: MG\Infrastructure\Domain\Model\User\DoctrineUserRepository
   id:
     userId:
       column: id
       type: UserId
-  table: mg_user
-  repositoryClass: MG\Infrastructure\Domain\Model\User\DoctrineUserRepository
   fields:
     email:
       type: string

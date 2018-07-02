@@ -13,11 +13,11 @@ class InMemoryUserRepository implements UserRepository
 
     public function ofId(UserId $userId): ?User
     {
-        if (!isset($this->users[$userId->userId()])) {
+        if (!isset($this->users[$userId->id()])) {
             return null;
         }
 
-        return $this->users[$userId->userId()];
+        return $this->users[$userId->id()];
     }
 
     public function ofEmail($email): ?User
@@ -33,7 +33,7 @@ class InMemoryUserRepository implements UserRepository
 
     public function add(User $user)
     {
-        $this->users[$user->id()->userId()] = $user;
+        $this->users[$user->id()->id()] = $user;
     }
 
     public function nextIdentity(): UserId

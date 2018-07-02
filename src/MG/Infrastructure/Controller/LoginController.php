@@ -61,4 +61,12 @@ class LoginController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/signout", name="signout")
+     */
+    public function signoutAction()
+    {
+        return true;
+    }
 }

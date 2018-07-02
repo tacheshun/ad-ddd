@@ -1,7 +1,6 @@
 <?php
 namespace MG\Infrastructure\Domain\Model;
 
-
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\GuidType;
 
@@ -15,7 +14,9 @@ class DoctrineEntityId extends GuidType
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         $className = $this->getName();
+        $namespace = $this->getNameSpace();
+        $fqdn = $namespace.'\\'.$className;
 
-        return new $className($value);
+        return new $fqdn($value);
     }
 }

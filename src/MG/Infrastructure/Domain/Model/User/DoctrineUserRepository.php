@@ -21,8 +21,8 @@ class DoctrineUserRepository extends EntityRepository implements UserRepository
 
     public function add(User $user)
     {
-        //dump($user);die;
         $this->getEntityManager()->persist($user);
+        $this->getEntityManager()->flush();
     }
 
     public function nextIdentity(): UserId

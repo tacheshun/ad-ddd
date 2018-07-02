@@ -29,8 +29,7 @@ class IndexController extends Controller
      */
     public function dashboardAction()
     {
-        $userSecurityToken = $this->get('security.token_storage')->getToken()->getUser();
-        dump($userSecurityToken);die;
+        $userSecurityToken = $this->get('session')->get('user');
         if (!$userSecurityToken) {
             return $this->redirect('/signin');
         }

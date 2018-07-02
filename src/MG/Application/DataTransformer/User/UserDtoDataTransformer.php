@@ -22,7 +22,7 @@ class UserDtoDataTransformer
     public function read(): array
     {
         return [
-            'id'      => $this->user->id()->userId(),
+            'id'      => $this->user->id()->id(),
             'num_ads' => 0,
         ];
     }

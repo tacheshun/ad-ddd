@@ -26,8 +26,8 @@ class InMemoryAdRepository implements AdRepository
         $ads = [];
 
         foreach ($this->ads as $ad) {
-            if ($ad->userId()->equals($userId)) {
-                $ads[] = $this->ads[$userId->userId()];
+            if ($ad->id()->equals($userId)) {
+                $ads[] = $this->ads[$userId->id()];
             }
         }
 

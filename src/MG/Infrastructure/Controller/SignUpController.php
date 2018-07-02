@@ -8,7 +8,6 @@ use MG\Application\Service\User\SignUpUserRequest;
 use MG\Application\Service\User\SignUpUserService;
 use MG\Domain\Model\User\User;
 use MG\Domain\Model\User\UserAlreadyExistException;
-use MG\Infrastructure\Domain\Model\User\DoctrineUserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -51,14 +50,11 @@ class SignUpController extends Controller
                         $data['password']
                     )
                 );
-
                 return $this->redirectToRoute('signin');
 
             } catch (UserAlreadyExistException $e) {
-
                 $form->get('email')->addError(new FormError('Email is already registered by another user'));
             } catch (\Exception $e) {
-                //throw $e;
                 $form->addError(new FormError('There was an error, please get in touch with us'));
             }
         }
