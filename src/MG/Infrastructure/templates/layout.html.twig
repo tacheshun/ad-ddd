@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olx</title>
+    <title>OlxClone</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -41,23 +41,23 @@
                 </button>
                 <a class="navbar-brand" href="{{ path('home') }}">OlxClone</a>
             </div>
-            {#<div class="collapse navbar-collapse" id="navbar-collapse-01">#}
-                {#{% if app.session.has('user') %}#}
-                    {#<p class="navbar-text navbar-right">#}
-                        {#<a href="{{ path('signout') }}">Bye!</a>#}
-                    {#</p>#}
-                    {#<p class="navbar-text navbar-right">#}
-                        {#<a href="{{ path('dashboard') }}">Dashboard</a>#}
-                    {#</p>#}
-                {#{% else %}#}
-                    {#<p class="navbar-text navbar-right">#}
-                        {#<a href="{{ path('signin') }}">Sign in</a>#}
-                    {#</p>#}
-                    {#<p class="navbar-text navbar-right">#}
-                        {#<a href="{{ path('signup') }}">Sign up</a>#}
-                    {#</p>#}
-                {#{% endif %}#}
-            {#</div><!-- /.navbar-collapse -->#}
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                {% if app.session.has('user') %}
+                    <p class="navbar-text navbar-right">
+                        <a href="{{ path('signout') }}">Bye!</a>
+                    </p>
+                    <p class="navbar-text navbar-right">
+                        <a href="{{ path('dashboard') }}">Dashboard</a>
+                    </p>
+                {% else %}
+                    <p class="navbar-text navbar-right">
+                        <a href="{{ path('signin') }}">Sign in</a>
+                    </p>
+                    <p class="navbar-text navbar-right">
+                        <a href="{{ path('signup') }}">Sign up</a>
+                    </p>
+                {% endif %}
+            </div><!-- /.navbar-collapse -->
         </nav><!-- /navbar -->
 
         {% if messages is defined %}

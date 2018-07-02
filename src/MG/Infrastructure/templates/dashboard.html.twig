@@ -1,11 +1,11 @@
-{% extends 'layout.html.twig' %}
+{% extends '@infra/layout.html.twig' %}
 
 {% block content %}
 
     <p class="lead">If something would happen to me...</p>
 
-    {% for wish in wishes %}
-        {% include 'wish-item.html.twig' with {wish: wish, showOptions: true} %}
+    {% for ad in ads %}
+        {% include 'ad-item.html.twig' with {ad: ad, showOptions: true} %}
     {% else %}
         <div class="row">
             <div class="col-xs-12">
@@ -15,11 +15,11 @@
     {% endfor %}
 
     <br/>
-    <p class="lead">You have {{ wishes|length }} wishes.</p>
+    <p class="lead">You have {{ ads|length }} ads.</p>
 
     <div class="row">
         <div class="col-xs-12">
-            {% include "wish-form.html.twig" with {route: path('add-wish')} %}
+            {% include "@infra/ad-form.html.twig" with {route: path('add-wish')} %}
         </div>
     </div>
 

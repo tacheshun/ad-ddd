@@ -1,0 +1,13 @@
+{% extends '@infra/layout.html.twig' %}
+
+{% block content %}
+    {% include 'ad-item.html.twig' with {wish: wish} %}
+
+    <br/>
+    <p class="lead">Fine your wish...</p>
+    <div class="row">
+        <div class="col-xs-12">
+            {% include "ad-form.html.twig" with {route: path('update-wish'), wish: wish} %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+MG\Domain\Model\User\User:
+  type: entity
+  id:
+    userId:
+      column: id
+      type: UserId
+  table: mg_user
+  repositoryClass: MG\Infrastructure\Domain\Model\User\DoctrineUserRepository
+  fields:
+    email:
+      type: string
+    password:
+      type: string
+  manyToMany:
+    ads:
+      orphanRemoval: true
+      cascade: ["all"]
+      targetEntity: MG\Domain\Model\Ad\Ad
+      joinTable:
+        name: mg_aggregate_user_ads
+        joinColumns:
+          user_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          ad_id:
+            referencedColumnName: id
+            unique: true

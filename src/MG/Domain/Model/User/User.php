@@ -9,6 +9,9 @@ use MG\Domain\Model\Ad\Adid;
 
 class User
 {
+    const MAX_LENGTH_EMAIL = 20;
+    const MAX_LENGTH_PASSWORD = 50;
+
     protected $userId;
 
     protected $email;

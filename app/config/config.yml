@@ -44,7 +44,9 @@ doctrine:
         driver: pdo_sqlite
         charset:  UTF8
         path: '%database_path%'
-
+        types:
+            UserId:  MG\Infrastructure\Domain\Model\User\DoctrineUserId
+            AdId: MG\Infrastructure\Domain\Model\Ad\DoctrineAdId
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
