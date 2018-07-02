@@ -14,7 +14,7 @@ abstract class Authentifier
         $this->userRepository = $userRepository;
     }
 
-    public function authenticate($email, $password)
+    public function authenticate($email, $password): bool
     {
         if ($this->isAlreadyAuthenticated()) {
             return true;

@@ -29,10 +29,9 @@ class IndexController extends Controller
             new ViewAdRequest($userSecurityToken->id()->id())
         );
 
-        dump($ads);
         return $this->render('@infra/dashboard.html.twig', [
             [
-                'ads' => $ads,
+                'ads'      => $ads,
                 'messages' => $messages
             ]
         ]);

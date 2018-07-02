@@ -24,6 +24,7 @@ class DoctrineAdRepository extends EntityRepository implements AdRepository
     public function add(Ad $ad)
     {
         $this->getEntityManager()->persist($ad);
+        $this->getEntityManager()->flush();
     }
 
     public function remove(Ad $ad)

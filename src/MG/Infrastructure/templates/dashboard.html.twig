@@ -15,11 +15,12 @@
         {% endfor %}
     {% endif %}
     <br/>
+{% if ads is defined %}
     {#<p class="lead">You have {{ ads|length }} ads.</p>#}
-
+{% endif %}
     <div class="row">
         <div class="col-xs-12">
-            {#{% include "@infra/ad-form.html.twig" with {route: path('add-wish')} %}#}
+            {#{% include "@infra/ad-form.html.twig" with {route: path('create-ad')} %}#}
         </div>
     </div>
 
