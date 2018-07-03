@@ -58,7 +58,7 @@ class IndexController extends Controller
             $service->execute(
                     new CreateAdRequest(
                         $userSecurityToken->id()->id(),
-                        $request->get('email'),
+                        $request->get('telephone'),
                         $request->get('content')
                     )
                 );

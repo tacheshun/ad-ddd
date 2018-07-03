@@ -24,7 +24,6 @@ class InMemoryAdRepository implements AdRepository
     public function ofUserId(UserId $userId): ?array
     {
         $ads = [];
-
         foreach ($this->ads as $ad) {
             if ($ad->id()->equals($userId)) {
                 $ads[] = $this->ads[$userId->id()];

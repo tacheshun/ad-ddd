@@ -38,7 +38,7 @@ class UpdateAdService
         }
 
         if (!$ad->userId()->equals(new UserId($userId))) {
-            throw new \InvalidArgumentException('User is not authorized to update this wish');
+            throw new \InvalidArgumentException('User is not authorized to update this ad');
         }
 
         $ad->changeContent($content);

@@ -31,7 +31,7 @@ class ViewAdService
 
         $user = $this->userRepository->ofId(new UserId($userId));
         if (null === $user) {
-            throw new UserDoesNotExistException();
+            throw new UserDoesNotExistException('User does not exist in database.');
         }
 
         $ad = $this->adRepository->ofId(new Adid($adId));

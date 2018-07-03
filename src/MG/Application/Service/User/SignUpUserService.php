@@ -21,13 +21,6 @@ class SignUpUserService
         $this->userDataTransformer = $userDataTransformer;
     }
 
-    /**
-     * @param SignUpUserRequest $request
-     *
-     * @return User|array
-     *
-     * @throws UserAlreadyExistException
-     */
     public function execute(?SignUpUserRequest $request): array
     {
         $email    = $request->email();

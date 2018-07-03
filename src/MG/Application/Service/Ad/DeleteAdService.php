@@ -24,22 +24,22 @@ class DeleteAdService
     public function execute(?DeleteAdRequest $request)
     {
         $userId = $request->userId();
-        $wishId = $request->adId();
+        $adId = $request->adId();
 
         $user = $this->userRepository->ofId(new UserId($userId));
         if (null === $user) {
             throw new UserDoesNotExistException();
         }
 
-        $wish = $this->adRepository->ofId(new Adid($wishId));
-        if (!$wish) {
+        $ad = $this->adRepository->ofId(new Adid($adId));
+        if (!$ad) {
             throw new AdDoesNotExistException();
         }
 
-        if (!$wish->userId()->equals(new UserId($userId))) {
+        if (!$ad->userId()->equals(new UserId($userId))) {
             throw new \InvalidArgumentException('User is not authorized to delete this ad');
         }
 
-        $this->adRepository->remove($wish);
+        $this->adRepository->remove($ad);
     }
 }

@@ -20,7 +20,7 @@ class CreateAdService
         $this->adRepository = $adRepository;
     }
 
-    public function execute(?CreateAdRequest $request)
+    public function execute(?CreateAdRequest $request): void
     {
         $userId    = $request->userId();
         $telephone = $request->telephone();
