@@ -7,6 +7,7 @@ use MG\Application\Service\Ad\CreateAdRequest;
 use MG\Application\Service\Ad\CreateAdService;
 use MG\Domain\Model\Ad\Ad;
 use MG\Domain\Model\User\User;
+use MG\Domain\Model\User\UserDoesNotExistException;
 use MG\Domain\Model\User\UserId;
 use MG\Infrastructure\Persistence\InMemory\Ad\InMemoryAdRepository;
 use MG\Infrastructure\Persistence\InMemory\User\InMemoryUserRepository;
@@ -55,5 +56,13 @@ class CreateAdServiceTest extends TestCase
 
         self::assertNotNull($ad);
         self::assertInstanceOf(Ad::class, $ad);
+    }
+
+    public function test_non_existing_user_should_throw_exceptiopn()
+    {
+        self::expectException(UserDoesNotExistException::class);
+        $this->createAdService->execute(
+            new CreateAdRequest(new UserId('non-existing'), '0725085121', 'blah content')
+        );
     }
 }

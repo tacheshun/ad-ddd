@@ -21,12 +21,12 @@ class CreateAdRequest
         return $this->userId;
     }
 
-    public function telephone(): string
+    public function telephone(): ?string
     {
         return $this->telephone;
     }
 
-    public function content(): string
+    public function content(): ?string
     {
         return $this->content;
     }

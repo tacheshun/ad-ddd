@@ -2,7 +2,6 @@
 
 namespace MG\Application\Service\Ad;
 
-
 use MG\Domain\Model\Ad\AdRepository;
 use MG\Domain\Model\User\User;
 use MG\Domain\Model\User\UserDoesNotExistException;
