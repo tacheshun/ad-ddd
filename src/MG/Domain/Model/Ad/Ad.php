@@ -2,7 +2,6 @@
 
 namespace MG\Domain\Model\Ad;
 
-
 use Assert\Assertion;
 use MG\Domain\Model\User\UserId;
 

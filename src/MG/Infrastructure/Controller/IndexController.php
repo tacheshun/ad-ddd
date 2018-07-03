@@ -12,19 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
-     * @Route("/", name="home")
-     */
-    public function indexAction()
-    {
-        $u = new UserId();
-        dump($u);
-
-        return $this->render('@infra/layout.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
-
-    /**
      * @Route("/dashboard", name="dashboard")
      */
     public function dashboardAction()
@@ -38,17 +25,30 @@ class IndexController extends Controller
         $messages = $flashBag->get('message');
         $repository = $this->getDoctrine()->getManager()->getRepository(Ad::class);
 
-        $response = (new ViewAdService($repository))->execute(
+        $ads = (new ViewAdService($repository))->execute(
             new ViewAdRequest($userSecurityToken->id()->id())
         );
 
-        $badges = [];
+        dump($ads);
         return $this->render('@infra/dashboard.html.twig', [
             [
-                'ads' => $response,
-                'badges' => $badges,
+                'ads' => $ads,
                 'messages' => $messages
             ]
         ]);
     }
+
+    /**
+     * @Route("/", name="home")
+     */
+    public function indexAction()
+    {
+        $user = new UserId();
+        dump($user);
+
+        return $this->render('@infra/layout.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
 }
