@@ -62,9 +62,9 @@ class IndexController extends Controller
                         $request->get('content')
                     )
                 );
-            $this->get('session')->getFlashBag()->add('message', 'Great!');
+            $this->get('session')->getFlashBag()->add('info', 'Great!');
         } catch (\Exception $e) {
-            $this->get('session')->getFlashBag()->add('message', $e->getMessage());
+            $this->get('session')->getFlashBag()->add('error', $e->getMessage());
         }
 
         return $this->redirect('/dashboard');
