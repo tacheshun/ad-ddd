@@ -3,7 +3,7 @@
 namespace MG\Application\Service\User;
 
 
-class ViewAdRequest
+class ViewAdsRequest
 {
     private $userId;
 

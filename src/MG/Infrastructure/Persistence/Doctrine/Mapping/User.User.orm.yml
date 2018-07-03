@@ -16,6 +16,7 @@ MG\Domain\Model\User\User:
       orphanRemoval: true
       cascade: ["all"]
       targetEntity: MG\Domain\Model\Ad\Ad
+      fetch: EAGER
       joinTable:
         name: mg_aggregate_user_ads
         joinColumns:

@@ -3,7 +3,7 @@
 namespace MG\Application;
 
 
-use MG\Application\Service\User\ViewAdService;
+use MG\Application\Service\User\ViewAdsService;
 use PHPUnit\Framework\TestCase;
 
 class ViewAddServiceTest extends TestCase

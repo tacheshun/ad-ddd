@@ -18,6 +18,10 @@ class User
 
     protected $password;
 
+    protected $createdOn;
+
+    protected $updatedOn;
+
     protected $ads;
 
     public function __construct(UserId $userId, $email, $password)
@@ -66,12 +70,22 @@ class User
         return $this->password;
     }
 
-    public function makeNewAd($address, $content): Ad
+    public function createdOn() : \DateTime
+    {
+        return $this->createdOn;
+    }
+
+    public function updatedOn() : \DateTime
+    {
+        return $this->updatedOn;
+    }
+
+    public function makeNewAd($telephone, $content): Ad
     {
         return new Ad(
             new Adid(),
             $this->id(),
-            $address,
+            $telephone,
             $content
         );
     }

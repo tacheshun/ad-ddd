@@ -5,7 +5,7 @@ namespace MG\Application\Service\User;
 use MG\Domain\Model\Ad\AdRepository;
 use MG\Domain\Model\User\UserId;
 
-class ViewAdService
+class ViewAdsService
 {
     private $adRepository;
 
@@ -14,7 +14,7 @@ class ViewAdService
         $this->adRepository = $adRepository;
     }
 
-    public function execute(?ViewAdRequest $request): ?array
+    public function execute(?ViewAdsRequest $request): ?array
     {
         return $this->adRepository->ofUserId(new UserId($request->userId()));
     }

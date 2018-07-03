@@ -7,7 +7,7 @@
     <p class="lead">Fine your ad...</p>
     <div class="row">
         <div class="col-xs-12">
-            {% include "ad-form.html.twig" with {route: path('update-ad'), ad: ad} %}
+            {% include "@infra/ad-form.html.twig" with {route: path('update-ad'), ad: ad} %}
         </div>
     </div>
 {% endblock %}

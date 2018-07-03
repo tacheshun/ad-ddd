@@ -2,6 +2,7 @@ MG\Domain\Model\Ad\Ad:
   type: entity
   table: mg_ad
   repositoryClass: MG\Infrastructure\Domain\Model\Ad\DoctrineAdRepository
+  fetch: EAGER
   id:
     adid:
       column: id

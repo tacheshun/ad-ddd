@@ -4,6 +4,7 @@ namespace MG\Infrastructure\Controller;
 
 
 use MG\Application\Service\User\LogInUserService;
+use MG\Application\Service\User\LogOutUserService;
 use MG\Domain\Model\User\User;
 use MG\Domain\Model\User\UserAlreadyExistException;
 use MG\Infrastructure\Domain\Service\SessionAuthentifier;
@@ -53,6 +54,7 @@ class LoginController extends Controller
             } catch (UserAlreadyExistException $e) {
                 $form->get('email')->addError(new FormError('Email is already registered by another user'));
             } catch (\Exception $e) {
+//                throw $e;
                 $form->addError(new FormError('There was an error, please get in touch with us'));
             }
         }
@@ -67,6 +69,11 @@ class LoginController extends Controller
      */
     public function signoutAction()
     {
-        return true;
+        $userRepository = $this->getDoctrine()->getManager()->getRepository(User::class);
+        $service = (new LogOutUserService(
+            new SessionAuthentifier($userRepository, $this->get('session')))
+        )->execute();
+
+        return $this->redirect('/signin');
     }
 }

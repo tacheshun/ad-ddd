@@ -4,6 +4,7 @@ namespace MG\Application\Service\Ad;
 
 
 use MG\Domain\Model\Ad\AdRepository;
+use MG\Domain\Model\User\User;
 use MG\Domain\Model\User\UserDoesNotExistException;
 use MG\Domain\Model\User\UserId;
 use MG\Domain\Model\User\UserRepository;
@@ -19,7 +20,7 @@ class CreateAdService
         $this->adRepository = $adRepository;
     }
 
-    public function execute(CreateAdRequest $request)
+    public function execute(?CreateAdRequest $request)
     {
         $userId    = $request->userId();
         $telephone = $request->telephone();
@@ -28,7 +29,6 @@ class CreateAdService
         $user = $this->findUserOrFail($userId);
 
         $ad = $user->makeNewAd(
-            $this->adRepository->nextIdentity(),
             $telephone,
             $content
         );
@@ -36,7 +36,7 @@ class CreateAdService
         $this->adRepository->add($ad);
     }
 
-    protected function findUserOrFail($userId)
+    private function findUserOrFail($userId): User
     {
         $user = $this->userRepository->ofId(new UserId($userId));
         if (null === $user) {

@@ -47,7 +47,7 @@ class Ad
     {
         $telephone = trim($telephone);
         if (!$telephone) {
-            throw new \InvalidArgumentException('Telephone cannot be empty');
+            throw new \InvalidArgumentException('telephone cannot be empty');
         }
 
         Assertion::notEmpty($telephone);
@@ -71,9 +71,9 @@ class Ad
         return $this;
     }
 
-    public function changePhoto($photo): self
+    public function changeEmail($email): self
     {
-        $this->setTelephone($photo);
+        $this->setTelephone($email);
 
         return $this;
     }

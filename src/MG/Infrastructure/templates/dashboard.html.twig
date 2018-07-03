@@ -16,23 +16,28 @@
     {% endif %}
     <br/>
 {% if ads is defined %}
-    {#<p class="lead">You have {{ ads|length }} ads.</p>#}
+    <p class="lead">You have {{ ads|length }} ads.</p>
+{% else %}
+    <p class="lead">You have 0 ads :(</p>
 {% endif %}
     <div class="row">
         <div class="col-xs-12">
-            {#{% include "@infra/ad-form.html.twig" with {route: path('create-ad')} %}#}
+            {% include "@infra/ad-form.html.twig" with {route: path('create-ad')} %}
         </div>
     </div>
 
     <br/>
     <p class="lead">My hard working earned badges...</p>
-    {#{% for badge in badges %}#}
-        {#{% include 'badge-item.html.twig' with {badge: badge} %}#}
-    {#{% else %}#}
-        {#<div class="row">#}
-            {#<div class="col-xs-12">#}
-                {#No badges, for now.#}
-            {#</div>#}
-        {#</div>#}
-    {#{% endfor %}#}
+    {% if badges is defined %}
+        {% for badge in badges %}
+            {% include 'badge-item.html.twig' with {badge: badge} %}
+
+        {% endfor %}
+    {% else %}
+        <div class="row">
+            <div class="col-xs-12">
+                No badges, for now.
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

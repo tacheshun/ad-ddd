@@ -49,6 +49,9 @@
                     <p class="navbar-text navbar-right">
                         <a href="{{ path('dashboard') }}">Dashboard</a>
                     </p>
+                    <p class="navbar-text navbar-right">
+                        <span> Hi {{ app.session.get('user').email }}</span>
+                    </p>
                 {% else %}
                     <p class="navbar-text navbar-right">
                         <a href="{{ path('signin') }}">Sign in</a>

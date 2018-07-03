@@ -3,18 +3,16 @@
 namespace MG\Application\Service\Ad;
 
 
-use MG\Domain\Model\User\UserId;
-
 class CreateAdRequest
 {
     private $userId;
-    private $email;
+    private $telephone;
     private $content;
 
-    public function __construct(UserId $userId, $email, $content)
+    public function __construct($userId, $telephone, $content)
     {
         $this->userId = $userId;
-        $this->email = $email;
+        $this->telephone = $telephone;
         $this->content = $content;
     }
 
@@ -23,9 +21,9 @@ class CreateAdRequest
         return $this->userId;
     }
 
-    public function email(): string
+    public function telephone(): string
     {
-        return $this->email;
+        return $this->telephone;
     }
 
     public function content(): string
